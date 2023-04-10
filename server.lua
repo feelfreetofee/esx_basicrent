@@ -13,7 +13,9 @@ for i, point in pairs(Config.points) do
 				repeat SetPedIntoVehicle(ped, veh, -1) Wait(100)
 				until GetPedInVehicleSeat(veh, -1) == ped
 				SetVehicleNumberPlateText(veh, point.job and xPlayer.job.label or Config.plate)
-				unique[i][src] = veh
+				if unique[i] then
+					unique[i][src] = veh
+				end
 			end)
 		end
 	})
